@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CycleDeVie</string>
+    <string name="button1">Aller sur l activité suivante</string>
+    <string name="button2">Revenir à l activité précédente</string>
+</resources>
