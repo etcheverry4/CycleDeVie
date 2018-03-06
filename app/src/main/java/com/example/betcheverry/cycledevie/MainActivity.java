@@ -7,37 +7,45 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+/**
+ * Created by METCHEVERRY on 28/02/2018.
+ */
 
-    private Button button;
+public class MainActivity extends AppCompatActivity {
+
     public Livre livre = null;
 
+    Livre livre1 = new Livre("livre1", "A1", 248);
+    Livre livre2 = new Livre("livre2", "A2", 497);
+    Livre livre3 = new Livre("livre3", "A3", 652);
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this, "Create 1", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Create 1", Toast.LENGTH_LONG).show();
 
-        this.button = (Button)findViewById(R.id.button);
-        this.button.setOnClickListener(this);
-    }
-
-    public void onClick(View v){
-        final Intent intent = new Intent(MainActivity.this, ActivityTwo.class);
-        this.startActivity(intent);
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ActivityTwo.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(this, "Start 1", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Start 1", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, "Resume 1", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Resume 1", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -55,29 +63,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(this, "Pause 1", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Pause 1", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(this, "Stop 1", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Stop 1", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Toast.makeText(this, "Restart 1", Toast.LENGTH_LONG);
+        Toast.makeText(this, "Restart 1", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "Destroy 1", Toast.LENGTH_LONG);
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
+        Toast.makeText(this, "Destroy 1", Toast.LENGTH_LONG).show();
     }
 }

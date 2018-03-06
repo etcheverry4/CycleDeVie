@@ -1,34 +1,35 @@
 package com.example.betcheverry.cycledevie;
 
 /**
- * Created by BETCHEVERRY on 28/02/2018.
+ * Created by METCHEVERRY on 28/02/2018.
  */
 
 public class Livre {
+
     private String titre;
     private String auteur;
-    private String nombrepage;
+    private int nombrepages;
 
-    public Livre(String titre, String auteur, String nombrepage){
+    public Livre(){}
+
+    public Livre(String titre, String auteur, int nombrepages) {
         this.titre = titre;
         this.auteur = auteur;
-        this.nombrepage = nombrepage;
+        this.nombrepages = nombrepages;
     }
 
-    // Getters
-    public String getTitre(){
-        return this.titre;
+    public String getTitre() {
+        return titre;
     }
 
-    public String getAuteur(){
-        return this.auteur;
+    public String getAuteur() {
+        return auteur;
     }
 
-    public String getNombrePage(){
-        return this.nombrepage;
+    public int getNombrePages() {
+        return nombrepages;
     }
 
-    // Setteurs
     public void setTitre(String titre) {
         this.titre = titre;
     }
@@ -37,13 +38,12 @@ public class Livre {
         this.auteur = auteur;
     }
 
-    public void setNombrepage(String nombrepage) {
-        this.nombrepage = nombrepage;
+    public void setNombrePages(int nombrepages) {
+        this.nombrepages = nombrepages;
     }
 
-
-    // Affichage
+    @Override
     public String toString(){
-        return "Titre : " + this.titre + " \nAuteur : " + this.auteur + " \nNombre de pages : " + this.nombrepage;
+        return "Titre : " + titre + " \nAuteur : " + auteur + " \nNombre de pages : " + nombrepages;
     }
 }
